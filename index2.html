@@ -13,8 +13,16 @@
 
 <a href="index.html"><h3>Back</h3></a>
 
-
 <script>
 
+    (function getNotes() {
+        let notes = getExistingNotes();
+        let notesArray = Object.values(notes);
+        let orderedList = document.getElementById("notes-list");
+        notesArray.forEach(note => {
+            const listItem = `<li>${note}</li>`;
+            orderedList.insertAdjacentHTML("beforeend", listItem);
+        })
+    })()
 
 </script>
